@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Color Guess</title>
+
+        <style>
+            @keyframes scrollBackground {
+                0% {
+                    background-position: 0% 0;
+                }
+                100% {
+                    background-position: -100% -100%;
+                }
+            }
+
+            #box {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                border: none;
+                border-radius: 6px;
+                width: 50vw;
+                height: 50vw;
+                outline: solid;
+                outline-width: 1vw;
+                background-color: rgb(255, 255, 255);
+                outline-color: rgb(165, 165, 165);
+                color: rgb(255, 255, 255);
+            }
+
+            body {
+                text-align: center;
+                background-color: rgb(255, 255, 255);
+                background-image: url('Images/CheckerboardPattern.png');
+                background-repeat: repeat; 
+                background-size: 800vw 800vw;
+                animation: scrollBackground 60s linear infinite;
+                font-family: 'alphafont';
+                font-weight: lighter;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            
+        </div>
+    </body>
+</html>
