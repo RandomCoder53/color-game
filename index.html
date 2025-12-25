@@ -1,50 +1,74 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="style.css" type="text/css">
         <title>Color Guess</title>
+        <script>
+            let redcolor = 0
+            let bluecolor = 0
+            let greencolor = 0
+            function start() {
+                redcolor = Math.floor((Math.random() * 256));
+                bluecolor = Math.floor((Math.random() * 256));
+                greencolor = Math.floor((Math.random() * 256));
 
-        <style>
-            @keyframes scrollBackground {
-                0% {
-                    background-position: 0% 0;
+                const buttons = document.getElementsByClassName("startbuttons");
+                for (let i = 0; i < buttons.length; i++) {
+                    buttons[i].style.opacity = "0";
+                    buttons[i].style.visibility = "hidden";
                 }
-                100% {
-                    background-position: -100% -100%;
+                document.getElementById("Game").style.visibility = "visible"
+                document.getElementById("Color").style.backgroundColor = `rgb(${redcolor}, ${greencolor},${bluecolor})`
+            }
+
+            function submit() {
+                const sliders = document.getElementsByClassName("slider");
+                const colorvalues = document.getElementsByClassName("colorvalue");
+                document.getElementById("Submit").style.opacity = "0";
+                document.getElementById("Submit").style.visibility = "hidden";
+                for (let i = 0; i < sliders.length; i++) {
+                    sliders[i].style.visibility = "hidden";
+                    colorvalues[i].style.visibility = "hidden";
                 }
-            }
+                
+                let chosenredcolor = document.getElementById('redslider').value
+                let chosengreencolor = document.getElementById('greenslider').value
+                let chosenbluecolor = document.getElementById('blueslider').value
 
-            #box {
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                border: none;
-                border-radius: 6px;
-                width: 50vw;
-                height: 50vw;
-                outline: solid;
-                outline-width: 1vw;
-                background-color: rgb(255, 255, 255);
-                outline-color: rgb(165, 165, 165);
-                color: rgb(255, 255, 255);
-            }
+                document.getElementById("Results").style.visibility = "visible"
+                document.getElementById("Color2").style.backgroundColor = `rgb(${chosenredcolor}, ${chosengreencolor}, ${chosenbluecolor})`
 
-            body {
-                text-align: center;
-                background-color: rgb(255, 255, 255);
-                background-image: url('Images/CheckerboardPattern.png');
-                background-repeat: repeat; 
-                background-size: 800vw 800vw;
-                animation: scrollBackground 60s linear infinite;
-                font-family: 'alphafont';
-                font-weight: lighter;
+                document.getElementById("ogcolor").innerHTML = `rgb(${redcolor}, ${greencolor}, ${bluecolor})`
+                document.getElementById("chosencolor").innerHTML = `rgb(${chosenredcolor}, ${chosengreencolor}, ${chosenbluecolor})`
             }
-
-        </style>
+        </script>
     </head>
     <body>
         <div id="box">
+            <button class="startbuttons" onclick="start()">RGB</button>
+            <div id="Game">
+                <div id="Color"></div>
+
+                <h1 id="redvalue" class="colorvalue">0</h1>
+                
+                <input type="range" min="0" max="255" value="0" class="slider" id="redslider" oninput="document.getElementById('redvalue').innerHTML = this.value">
+                
+                <h1 id="greenvalue" class="colorvalue">0</h1>
+
+                <input type="range" min="0" max="255" value="0" class="slider" id="greenslider" oninput="document.getElementById('greenvalue').innerHTML = this.value">
             
+                <h1 id="bluevalue" class="colorvalue">0</h1>
+
+                <input type="range" min="0" max="255" value="0" class="slider" id="blueslider" oninput="document.getElementById('bluevalue').innerHTML = this.value">
+                
+                <button id="Submit" onclick="submit()">Submit</button>
+
+                <div id="Results">
+                    <div id="Color2"></div>
+                    <h1 id="ogcolor">rgb(0, 0, 0)</h1>
+                    <h1 id="chosencolor">rgb(0, 0, 0)</h1>
+                </div>
+            </div>
         </div>
     </body>
 </html>
