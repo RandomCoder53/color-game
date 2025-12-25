@@ -1,0 +1,217 @@
+@font-face {
+    font-family: 'customfont';
+    src: url(Fonts/LilitaOne-Regular.ttf);
+}
+
+@keyframes scrollBackground {
+    0% {
+        background-position: 0% 0;
+    }
+    100% {
+        background-position: -100% -100%;
+    }
+}
+
+#box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 6px;
+    width: 50vw;
+    height: 50vw;
+    outline: solid;
+    outline-width: 1vw;
+    background-color: rgb(255, 255, 255);
+    outline-color: rgb(165, 165, 165);
+    color: rgb(255, 255, 255);
+}
+
+#Game {
+    visibility: hidden;
+}
+
+#Color {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-130%, -130%);
+    border: none;
+    border-radius: 6px;
+    width: 30%;
+    height: 30%;
+    outline: solid;
+    outline-width: 1vw;
+    background-color: rgb(255, 0, 0);
+    outline-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    visibility: inherit;
+}
+
+.startbuttons {
+    font-family: 'customfont';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 6px;
+    width: 38%;
+    height: 15%;
+    outline: solid;
+    outline-width: 0.75vw;
+    font-size: 5vw;
+    background-color: rgb(255, 255, 255);
+    outline-color: rgb(194, 194, 194);
+
+    visibility: inherit;
+
+    transition: 0.2s cubic-bezier(0,0.8,0.95,1);
+}
+
+.startbuttons:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    transition: 0.2s cubic-bezier(0,0.8,0.95,1);
+}
+
+body {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    background-image: url('Images/CheckerboardPattern.png');
+    background-repeat: repeat; 
+    background-size: 800vw 800vw;
+    animation: scrollBackground 60s linear infinite;
+    font-family: 'alphafont';
+    font-weight: lighter;
+}
+
+.slider {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 3vw);
+    background-color: rgb(85, 85, 85);
+    width: 80%;
+}
+
+#greenslider {
+    transform: translate(-50%, 10.5vw);
+}
+
+#blueslider {
+    transform: translate(-50%, 18vw);
+}
+
+#redvalue {
+    visibility: inherit;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -6vw);
+    font-family: 'customfont';
+    font-size: 5vw;
+    color: rgb(0, 0, 0);
+}
+
+#bluevalue {
+    visibility: inherit;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 9vw);
+    font-family: 'customfont';
+    font-size: 5vw;
+    color: rgb(0, 0, 0);
+}
+
+#greenvalue {
+    visibility: inherit;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 1.5vw);
+    font-family: 'customfont';
+    font-size: 5vw;
+    color: rgb(0, 0, 0);
+}
+
+#Submit {
+    font-family: 'customfont';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(0%, -200%);
+    border: none;
+    border-radius: 6px;
+    width: 38%;
+    height: 15%;
+    outline: solid;
+    outline-width: 0.75vw;
+    font-size: 5vw;
+    background-color: rgb(255, 255, 255);
+    outline-color: rgb(194, 194, 194);
+    transform-origin: 50% 50%;
+    visibility: inherit;
+
+    transition: 0.2s cubic-bezier(0,0.8,0.95,1);
+}
+
+#Submit:hover {
+    transform: translate(0%, -200%) scale(1.1);
+    transition: 0.2s cubic-bezier(0,0.8,0.95,1);
+}
+
+input[id='redslider']{ accent-color: rgb(255, 0, 0); }
+input[id='greenslider']{ accent-color: rgb(0, 151, 0); }
+input[id='blueslider']{ accent-color: rgb(0, 0, 255); }
+
+
+#Results {
+    visibility: hidden;
+}
+
+#Color2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-130%, 30%);
+    border: none;
+    border-radius: 6px;
+    width: 30%;
+    height: 30%;
+    outline: solid;
+    outline-width: 1vw;
+    background-color: rgb(255, 0, 0);
+    outline-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    visibility: inherit;
+}
+
+#ogcolor {
+    visibility: inherit;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 30vw;
+    height: 10vw;
+    transform-origin: center;
+    transform: translate(-14%, -170%);
+    font-family: 'customfont';
+    font-size: 3.5vw;
+    color: rgb(0, 0, 0);
+}
+
+#chosencolor {
+    visibility: inherit;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 30vw;
+    height: 10vw;
+    transform-origin: center;
+    transform: translate(-14%, 70%);
+    font-family: 'customfont';
+    font-size: 3.5vw;
+    color: rgb(0, 0, 0);
+}
